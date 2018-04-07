@@ -1,9 +1,10 @@
-function coeMat = detCoe(C,coordVec)
+function [coeMat, totalLength] = detCoe(C,coordVec)
     % Returns a coefficient matrix given a matrix C of joints and members
     % and a vector of points in coordVec.
     
     [Cr, Cc] = size(C);
     coeMat = zeros(Cr, Cc);
+    totalLength = 0;
     
     for i = 1:Cr
         memberMatches = find(C(i,:) == 1);
@@ -18,7 +19,8 @@ function coeMat = detCoe(C,coordVec)
            dist = coordVec(jointMatches(k,2)) - coordVec(jointMatches(k,1));
 
            unit = dist / sqrt(coordVec(jointMatches(k,2))^2 + coordVec(jointMatches(k,1))^2);
-           
+           totalLength = totalLength + abs(dist);
+
            if (isnan(unit))
                unit = 0;
            end
