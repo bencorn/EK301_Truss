@@ -1,44 +1,47 @@
 clc
 clear
 
-% Connection Matrix (Joints, Members)
-C = [
-        1 1 0 0 0 0 0;
-        1 0 1 0 1 1 0;
-        0 1 1 1 0 0 0;
-        0 0 0 1 1 0 1;
-        0 0 0 0 0 1 1;
-];
-
-% Connection Matrix (Reactions, Sx)
-Sx = [
-        1 0 0;
-        0 0 0;
-        0 0 0;
-        0 0 0;
-        0 0 0;
-];
-
-% Connection Matrix (Reactions, Sy)
-Sy = [ 
-        0 1 0;
-        0 0 0;
-        0 0 0;
-        0 0 0;
-        0 0 1;
-];
-
-% Location Vector (X)
-X = [0,2,1,3,4];
-
-% Location Vector (Y)
-Y = [0,0,-2,-3,0];
-
-% Applied Loads
-L = [0 0 0 0 0 0 0 0 1 0]';
+C = [ 1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+1	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0
+0	1	1	0	0	0	0	1	1	0	0	0	0	0	0	0	0
+0	0	1	1	0	0	0	0	0	1	1	0	0	0	0	0	0
+0	0	0	1	1	0	0	0	0	0	0	1	1	0	0	0	0
+0	0	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0
+0	0	0	0	0	1	1	1	0	0	0	0	0	0	1	0	0
+0	0	0	0	0	0	0	0	1	1	0	0	0	0	1	1	0
+0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	1	1
+0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	1];
 
 
-save TrussDesign1_BenZoeJared_A3.mat
+X=	[0	10	21	34	45	55	10	24.5	34.75	45];
+Y=	[0	0	0	0	0	0	-10	-10	-10	-10];
+
+Sx =	[1	0	0
+	0	0	0
+	0	0	0
+	0	0	0
+	0	0	0
+	0	0	0
+	0	0	0
+	0	0	0
+	0	0	0
+	0	0	0];
+			
+Sy=	[0	1	0
+	0	0	0
+	0	0	0
+	0	0	0
+	0	0	0
+	0	0	1
+	0	0	0
+	0	0	0
+	0	0	0
+	0	0	0];
+	
+	
+L = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0]';
+
+save TrussDesign2_BenZoeJared_A3.mat
 
 fprintf('Successfully saved variables.\n')
 clear
