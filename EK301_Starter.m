@@ -1,3 +1,6 @@
+clc
+clear
+
 % Connection Matrix (Joints, Members)
 C = [
         1 1 0 0 0 0 0;
@@ -32,7 +35,10 @@ X = [0,2,1,3,4];
 Y = [0,0,-2,-3,0];
 
 % Applied Loads
-L = [0 0 0 0 0 0 0 0 300 0];
+L = [0 0 0 0 0 0 0 0 500 0]';
 
 
-save EK301_Vars.mat
+save TrussDesign1_BenZoeJared_A3.mat
+
+fprintf('Successfully saved variables.\n')
+clear

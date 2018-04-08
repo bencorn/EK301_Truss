@@ -8,6 +8,6 @@ function maxLoad = calculateMaxLoad(L, T, fitCoe, memberLengths)
         T2(i) = T2(i)./(fitCoe/(memberLengths(i)^2));
     end
     
-    maxLoad = abs(sum(L)) * (1 / max(T2)) / 9.81;
+    maxLoad = abs(sum(L)) * (1 / max(T2));
     
 end
