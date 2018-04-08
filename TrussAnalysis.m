@@ -35,7 +35,7 @@ fitCoe = 1579.5; % N*cm^2
 
 bucklingLoad = fitCoe ./ (memberLengths.^2)';
 
-maxLoad = calculateMaxLoad(L, T, fitCoe, memberLengths);
+[maxLoad, firstFail] = calculateMaxLoad(L, T, fitCoe, memberLengths);
 
 % ----- Compression / Tension Output ----- %
 
@@ -74,6 +74,7 @@ fprintf('\nCost of truss: $%.2f\n', totalCost);
 
 compressionMembers = abs(T(T < 0))';
 fprintf('Max Load: %.2f N\n', maxLoad);
+fprintf('Member %d fails first. \n', firstFail);
 fprintf('Theoretical Max Load/Cost ratio in N/$: %.4f\n', maxLoad / totalCost);
 
 % ----- Buckling Member ----- %
