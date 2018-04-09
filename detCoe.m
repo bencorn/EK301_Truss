@@ -1,10 +1,9 @@
-function [Ax, Ay, Length] = detCoe(C,X, Y)
+function [Ax, Ay] = detCoe(C,X, Y)
     % Returns a coefficient matrix given a matrix C of joints and members
     % and a vector of points in coordVec.
     
     [Cr, Cc] = size(C);
     coeMat = zeros(Cr, Cc);
-    Length = 0;
     
     for i = 1:Cr
         memberMatches = find(C(i,:) == 1);

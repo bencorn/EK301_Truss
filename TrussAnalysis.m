@@ -21,7 +21,7 @@ load(fileName)
 
 [numJoints, numMembers] = size(C);
 
-[Ax, Ay, Length] = detCoe(C,X,Y);
+[Ax, Ay] = detCoe(C,X,Y);
 
 A = [Ax, Sx; Ay, Sy];
 
