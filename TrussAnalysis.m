@@ -35,7 +35,7 @@ fitCoe = 1579.5; % N*cm^2
 
 bucklingLoad = fitCoe ./ (memberLengths.^2)';
 
-[maxLoad, firstFail] = calculateMaxLoad(L, T, fitCoe, memberLengths);
+[maxLoad, firstFail, uncertainty] = calculateMaxLoad(L, T, fitCoe, memberLengths);
 
 % ----- Compression / Tension Output ----- %
 
